@@ -1,0 +1,78 @@
+<div class="main" ng-app="app-front" ng-controller="authController">
+    <div class="top">
+        <div class="container-main" >
+
+            <div class="container-create-edit" >
+                <h3 align="center">Добавить пользователя</h3>
+                <!--                <div class="block-left"></div>-->
+                <form class="form-create" novalidate ng-submit="tryToReg()">
+                    <div class="input-group mb-3">
+                        <label  class="input-group-text">Логин</label>
+                        <input type="text" class="form-control" placeholder="Логин" ng-model="user.username">
+                    </div>
+                    <div class="input-group mb-3">
+                        <label  class="input-group-text">Пароль</label>
+                        <input type="password" class="form-control" placeholder="Пароль" ng-model="user.password">
+                    </div>
+<!--                    <div class="input-group mb-3">-->
+<!--                        <label  class="input-group-text">Nic</label>-->
+<!--                        <input type="number" class="form-control" placeholder="Nic" ng-model="new_user.nic">-->
+<!--                    </div>-->
+                    <div class="input-group mb-3">
+                        <label  class="input-group-text">Email</label>
+                        <input type="email" class="form-control"  placeholder="Email"  ng-model="user.email">
+                    </div>
+                    <div class="input-group mb-3">
+                        <label  class="input-group-text">Телефон</label>
+                        <input type="text" class="form-control" placeholder="Телефон" ng-model="user.phonenumber">
+                    </div>
+<!--                    <div class="input-group mb-3">-->
+<!--                        <label  class="input-group-text">Поставщик</label>-->
+<!--                        <select id="selectManufacturer" class="form-control" placeholder="Поставщик" ng-model="new_product.manufacturerTitle"></select>-->
+<!--                    </div>-->
+
+                    <button type="submit" class="btn btn-primary">Регистрация</button>
+                </form>
+                <!--                <div class="block-left"></div>-->
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!--<body ng-app="app-front">-->
+
+<!--&lt;!&ndash;<div class="container" ng-controller="storeController">&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="wrapper" ng-controller="authProductController">&ndash;&gt;-->
+<!--<div id="container-main" ng-controller="authController">-->
+<!--    &lt;!&ndash;    <div class="user-icon"></div>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <div class="pass-icon"></div>&ndash;&gt;-->
+<!--    <form name="login-form" class="login-form" action="" >-->
+<!--        <div class="header-auth">-->
+<!--            <h1>Авторизация</h1>-->
+<!--        </div>-->
+
+<!--        <div class="content-auth">-->
+<!--            <input id="navLoginField" class="input username" ng-model="user.username" type="text"-->
+<!--                   onfocus="this.value=''" placeholder="Введите Ваш логин..." required>-->
+
+<!--            <input id="navPasswordField" class="input password" ng-model="user.password" type="password"-->
+<!--                   onfocus="this.value=''" placeholder="Введите Ваш пароль..." required>-->
+
+<!--            <input id="navEmailField"  type="email" class="input email" ng-model="user.email"-->
+<!--                   onfocus="this.value=''" placeholder="Введите Ваш email адрес..." required/>-->
+
+<!--            &lt;!&ndash;		<input name="password" type="password" class="input password" value="Пароль" onfocus="this.value=''" />&ndash;&gt;-->
+<!--        </div>-->
+
+<!--        <div class="footer-auth">-->
+<!--            &lt;!&ndash;        <button id="navLoginSubmit" class="btn btn-outline-warning btn-sm"&ndash;&gt;-->
+<!--            &lt;!&ndash;                type="submit" >Войти</button>&ndash;&gt;-->
+
+<!--            <input type="submit" name="submit" value="Регистрация" class="button" ng-click="tryToReg()"/>-->
+<!--            <input type="submit" name="submit" value="Войти" class="button" ng-click="tryToAuth()" />-->
+<!--        </div>-->
+
+<!--    </form>-->
+<!--</div>-->
+<!--</body>-->
