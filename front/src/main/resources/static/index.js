@@ -39,6 +39,14 @@
                 templateUrl: 'statistic/statistic.html',
                 controller: 'statisticController'
             })
+            .when('/order_pay', {
+                            templateUrl: 'order_pay/order_pay.html',
+                            controller: 'orderPayController'
+            })
+            .when('/orders', {
+                            templateUrl: 'orders/orders.html',
+                            controller: 'ordersController'
+            })
             .otherwise({
                 redirectTo: '/'
             });
