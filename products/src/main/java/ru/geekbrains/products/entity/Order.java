@@ -2,8 +2,12 @@ package ru.geekbrains.products.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -16,24 +20,27 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Column(name = "username")
+    private String username;
 
-    @Column
-    private Date date;// дата время заказа
+    @OneToMany(mappedBy = "order", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private List<OrderItem> items;
 
-    @Column
-    private Double amount;
+    @Column(name = "total_price")
+    private BigDecimal totalPrice;
 
-    @Column
-    private Double price;
-
-    @Column
+    @Column(name = "address")
     private String address;
 
-    @OneToMany(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "product_id")
-    private List<Product> products;
+    @Column(name = "phone")
+    private String phone;
+
+    @CreationTimestamp
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 
 }

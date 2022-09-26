@@ -28,13 +28,16 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public ApiProductsView findById(Long id) {
+    public ApiProductsView findProductById(Long id) {
          Optional<Product> product = productRepository.findById(id);
-        if (!product.isEmpty()) {
+        if (product!= null ) {
             ApiProductsView productsView = productMapper.mapToView(product.get());
             return productsView;
         }
         return null;
+    }
+    public Optional<Product> findById(Long id) {
+        return productRepository.findById(id);
     }
 
     public Optional<Product> findByTitle(String title) {
@@ -101,7 +104,7 @@ public class ProductService {
 
     @Transactional
     public void update(ApiProductsView dto){
-        ApiProductsView productsView = findById(dto.getId());
+        ApiProductsView productsView = findProductById(dto.getId());
         if (productsView != null){
             Product product = productMapper.mapToEntity(productsView);
             Optional<Category> category = categoryService.findByTitle(dto.getCategoryTitle());

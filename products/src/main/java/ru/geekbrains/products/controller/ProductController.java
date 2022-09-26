@@ -29,7 +29,7 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ApiProductsView findById(@PathVariable Long id) {
-        return productService.findById(id);
+        return productService.findProductById(id);
     }
 
     @PostMapping
